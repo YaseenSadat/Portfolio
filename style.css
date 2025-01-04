@@ -366,40 +366,124 @@ p {
   color: gray;
 }
 
-/* PROJECTS SECTION */
-
+/* General Project Section Styling */
 #projects {
-  position: relative;
+  padding: 20px;
 }
 
-#projects-arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 18rem;
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Space between projects */
 }
 
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center project title horizontally */
+  text-align: center;
+  gap: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: row; /* Default: image and text side by side */
+  gap: 2rem; /* Space between image and text content */
+  align-items: flex-start; /* Align items to the top */
+  width: 100%; /* Ensure the content spans the full width */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .project-content {
+    flex-direction: column; /* Stack image on top of text */
+    align-items: center; /* Center align for smaller screens */
+  }
+
+  .image-container {
+    width: 100%; /* Image takes up full width */
+  }
+
+  .content-container {
+    width: 100%; /* Text content takes up full width */
+    text-align: center; /* Center-align the text content for smaller screens */
+  }
+}
+
+.content-container {
+  flex: 2; /* Let the text content take up more space */
+  text-align: left; /* Align text to the left */
+}
+
+
+
+.image-container {
+  flex: 1; /* Let the image take up one portion of the container */
+  height: 100%; /* Match container height */
 }
 
 .project-img {
-  border-radius: 2rem;
-  width: auto; /* Adjust width automatically to maintain aspect ratio */
-  height: 200px; /* Set a fixed height */
-  object-fit: cover; /* Ensures the image fills the specified height without distortion */
+  width: 100%; /* Scale to fit container width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Add rounded corners */
 }
 
-
-.project-title {
-  margin: 1rem;
-  color: black;
+.content-container h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
+
+.content-container p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.content-container ul {
+  list-style-type: disc; /* Add bullets to lists */
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row; /* Arrange buttons horizontally */
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 1rem; /* Add space between buttons */
+  margin-top: 2rem; /* Add margin above the buttons */
+  width: 100%; /* Ensure the container spans the full width */
+}
+
 
 .project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto; /* Prevent buttons from inheriting any width */
+  height: auto; /* Ensure buttons only take their intrinsic height */
 }
+
+
+
+.project-btn:hover {
+  background-color: #f0f0f0;
+}
+
+
 
 /* CONTACT */
 
